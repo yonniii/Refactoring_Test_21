@@ -7,19 +7,22 @@ public class Main {
         Student aStudent = new Student();
         Student bStudent = new Student();
 
-        aStudent._studentNo = 'A';
+        aStudent.setStudentNo('A');
         System.out.println("학생 A의 점수를 입력하세요");
-        aStudent._score = inputScore(aStudent._studentNo);
+        int aScore = inputScore(aStudent.studentNo());
+        aStudent.setScore(aScore);
 
-        bStudent._studentNo = 'B';
+        bStudent.setStudentNo('B');
         System.out.println("학생 B의 점수를 입력하세요");
-        bStudent._score = inputScore(bStudent._studentNo);
+        int bScore = inputScore(bStudent.studentNo());
+        bStudent.setScore(bScore);
         aStudent.studentInfo();
         bStudent.studentInfo();
 
     }
 
     public static int inputScore(char studentNo){
+        System.out.println("학생" + studentNo + "의 점수를 입력하세요");
         int score = aScanner.nextInt();
         while (true) {
             if (score > 100 || score < 0) {

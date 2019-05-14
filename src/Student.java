@@ -1,14 +1,29 @@
 import com.sun.org.apache.xpath.internal.operations.Variable;
 public class Student {//Replace Data value with object
 
-    public char _studentNo;
-    public int _score;
+    private char _studentNo;
+    private int _score;
 
     public Student () {
         this._studentNo = ' ';
         this._score = 0;
     }
+    public void setScore (int aScore) {
+        this._score = aScore;
+    }
 
+    public int score () {
+        return this._score;
+    }
+
+
+    public void setStudentNo(char aStudentNo) {
+        this._studentNo = aStudentNo;
+    }
+
+    public char studentNo() {
+        return this._studentNo;
+    }
     public char grade() {
         if(this._score>=90) {
             return  'A';
@@ -24,7 +39,7 @@ public class Student {//Replace Data value with object
     }
 
     public void studentInfo() {
-        System.out.println(this._studentNo + "의 점수 : " + this._score);
+        System.out.println(this._studentNo + "의 점수 : " + this.score());
         System.out.println(this._studentNo + "의 학점 : " + this.grade());
     }
 
